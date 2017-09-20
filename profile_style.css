@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body, html {
+    max-height: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.my-photo { 
+    background-image: url("https://wallpaperbrowse.com/media/images/Wallpaper-10.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.my-text{
+    background-color: rgba(219, 219, 219, 0.50);
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    max-width: 386px;
+    padding: 12px;
+    border: 2px solid;
+    
+    
+}
+
