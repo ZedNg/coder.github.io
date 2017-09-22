@@ -1,33 +1,33 @@
 $(function () {
-    
-        // on submitting the form
-        $('form').submit(function (event) {
-            // prevent the default action of reloading the page
-            event.preventDefault();
-    
-            var sendData = {};
-            $(event.target.nodeName + ' :input').each(function(){
-                sendData[this.name] = $(this).val();
-            });
-    
-            var posting = $.ajax({
-                type: 'POST',
-                url: $(event.target.nodeName).prop('action'),
-                data: sendData
-            });
-    
-            posting.done(function (response) {
-                console.log(response);
-                $('#alert-id').prop('hidden', false);
-                $('form :input').each(function(){
-                    $(this).val('');
-                })
-            });
-            posting.fail(function (response) {
-                console.log(response);
-            });
+
+    // on submitting the form
+    $('form').submit(function (event) {
+        // prevent the default action of reloading the page
+        event.preventDefault();
+
+        var sendData = {};
+        $(event.target.nodeName + ' :input').each(function () {
+            sendData[this.name] = $(this).val();
         });
-    
+
+        var posting = $.ajax({
+            type: 'POST',
+            url: $(event.target.nodeName).prop('action'),
+            data: sendData
+        });
+
+        posting.done(function (response) {
+            console.log(response);
+            $('#alert-id').prop('hidden', false);
+            $('form :input').each(function () {
+                $(this).val('');
+            })
+        });
+        posting.fail(function (response) {
+            console.log(response);
+        });
+    });
+
     // RESPONSE ALERT WINDOW-------------------------------------------------------------------------------
     /* include the following HTML to use:
     <div class="form-group">
@@ -38,11 +38,11 @@ $(function () {
         </div>
     </div>
     */
-    
-        // on clicking the X button
-        $('#close-id').click(function(){
-            // hide the alert panel by adding the hidden property
-            $('#alert-id').prop('hidden', true);
-        });
-    
+
+    // on clicking the X button
+    $('#close-id').click(function () {
+        // hide the alert panel by adding the hidden property
+        $('#alert-id').prop('hidden', true);
     });
+
+});
